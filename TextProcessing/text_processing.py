@@ -45,9 +45,9 @@ def stop_words_remove(text):
     '''
     return [w for w in words if w not in stopwords.words("english")]
 
-def stremming(words):
+def stemming(words):
     '''
-        streaming is reducing a word to it's root form. Final word might no
+        stemming is reducing a word to it's root form. Final word might no
         be an actual word. It doesn't need a dictionary.
     '''
     return [PorterStemmer().stem(w) for w in words]
