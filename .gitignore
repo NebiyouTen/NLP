@@ -1,2 +1,5 @@
 # git ignore
 SMSSpamCollection
+
+# ignore py catches
+*__pycache__*

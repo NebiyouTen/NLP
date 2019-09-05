@@ -11,7 +11,8 @@
 import sys
 import pandas as pd
 import numpy as np
-
+from utils import *
+import pprint
 
 def main(argv):
     '''
@@ -22,8 +23,15 @@ def main(argv):
     data_frame = pd.read_table("SMSSpamCollection", header=None, names=[
                                'label', 'sms_message'])
     # convert labels to binary flag (ham=0 and spam=1)
-    data_frame['label'] = data_frame.label.map({"ham": 0, "spam":1})
-    print(data_frame.head(), "\n",data_frame.shape)
+    data_frame['label'] = data_frame.label.map({"ham": 0, "spam": 1})
+    print(data_frame.head(), "\n", data_frame.shape)
+    documents = ['Hello, how are you!',
+                 'Win money, win from home.',
+                 'Call me now.',
+                 'Hello, Call hello you tomorrow?']
+    bag_of_words_naive = bag_of_words(documents)
+    pprint.pprint(bag_of_words_naive
+    )
 
 
 if __name__ == "__main__":
